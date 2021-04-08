@@ -15,6 +15,7 @@ const dispText = document.querySelector(".message ");
 let btn = [btnCollectWater, btnFilter, dropWater, takeToMicroScope];
 const controlAnimeBtnArray = [false, false, false, false];
 const addClass = ['border-5', 'border-dark'];
+
 const controlAnimeBtnFunc = () => {
   for (let i = 0; i < btn.length; i++) {
     if (controlAnimeBtnArray[i] == false) {
@@ -31,6 +32,7 @@ const controlAnimeBtnFunc = () => {
     }
   }
 }
+
 const disableBtnIndex = (index, bool) => {  
   controlAnimeBtnArray[index] = bool;
 }
@@ -136,7 +138,7 @@ btnFilter.addEventListener("click", () => { //btn2 press Animation 2
 });
 
 
-dropWater.addEventListener("click", () => { //Animation 3
+dropWater.addEventListener("click", () => { //Animation 3 part 1
   
   requestFrame(moveDropperUp);
   dispMessage("Make Sure There are <strong>No Bubbles</strong> while covering it with Cover Glass!");
@@ -154,7 +156,7 @@ dropWater.addEventListener("click", () => { //Animation 3
   }, 7500);
 });
 
-takeToMicroScope.addEventListener("click", () => { //Animation 3
+takeToMicroScope.addEventListener("click", () => { //Animation 3 part 2
   requestFrame(moveSlides);
   takeToMicroScope.disabled = true;
   disableBtnIndex(3, false);
@@ -162,20 +164,20 @@ takeToMicroScope.addEventListener("click", () => { //Animation 3
     // disableBtnIndex(3, true);
     controlAnimationFunc(3);
     controlAnimeBtnFunc();
-    dispMessage("Though Water Appears To be <strong>Clean To Naked Eyes</strong>");
+    dispMessage("Bacteria Found: "+expBactName+"<br>Though Water Appears To be <strong>Clean To Naked Eyes</strong>");
     
     setTimeout(()=>{
-      dispMessage("<strong>Different Kinds Of Micro-Organisms</strong> are present In Water!");
+      dispMessage("Bacteria Found: "+expBactName+"<br><strong>Different Kinds Of Micro-Organisms</strong> are present In Water!");
     },4000);
     setTimeout(()=>{
-      dispMessage("As We Can See Here, <strong>"+expBactName+"</strong> is present in our filtered Water!");
-    },8000);
+      dispMessage("Bacteria Found: "+expBactName+"<br>As We Can See Here, <strong>"+expBactName+"</strong> is present in our filtered Water!");
+    },10000);
     setTimeout(()=>{
       dispMessage("<strong>Thank You!</strong> For Viewing..");
-    },14000);
+    },16000);
     setTimeout(()=>{
       dispMessage("<strong>We Hope You Have Understood The Experiment!</strong>");
-    },16000);
+    },18000);
   }, 5000);
 });
 
