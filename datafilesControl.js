@@ -173,11 +173,11 @@ takeToMicroScope.addEventListener("click", () => { //Animation 3 part 2
       dispMessage("Bacteria Found: "+expBactName+"<br>As We Can See Here, <strong>"+expBactName+"</strong> is present in our filtered Water!");
     },10000);
     setTimeout(()=>{
-      dispMessage("<strong>Thank You!</strong> For Viewing..");
+      dispMessage("<strong>Thank You!</strong> For Viewing..<br><strong>We Hope You Have Understood The Experiment!</strong>");
     },16000);
-    setTimeout(()=>{
-      dispMessage("<strong>We Hope You Have Understood The Experiment!</strong>");
-    },18000);
+    // setTimeout(()=>{
+    //   dispMessage("<strong>We Hope You Have Understood The Experiment!</strong>");
+    // },18000);
   }, 5000);
 });
 
