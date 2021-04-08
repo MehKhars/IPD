@@ -1,5 +1,5 @@
 // Import =========================================================
-import { requestFrame, canvasXY, bottleXY, dropperXY, slide1XY, slide2XY, microScopeXY, water2XY } from "../datafileObjects.js";
+import { requestFrame, canvasXY, bottleXY, dropperXY, slide1XY, slide2XY, microScopeXY, water2XY } from "./datafileObjects.js";
 // ----------------------------------------------------------------
 
 // Main Logic Body=====================================================
