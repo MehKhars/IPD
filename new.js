@@ -45,7 +45,7 @@ function initAnime1() {
   canvasXY.renderLake();
   initAnime1Count++;
   console.log("initAnime1...");
-  if (initAnime1Count < 15) {
+  if (initAnime1Count < 35) {
     requestFrame(initAnime1);
   }
 }
