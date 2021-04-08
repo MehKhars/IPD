@@ -1,8 +1,8 @@
-import { requestFrame } from "../datafileObjects.js";
-import { initAnime1, beakerTranslatesY } from "../new.js";
-import { initAnime2, beakerMovesYX } from "../new1.js";
-import { initAnime3, moveDropperUp, moveSlides } from "../new2.js";
-import { initAnime4, expBactName } from "../new3.js";
+import { requestFrame } from "./datafileObjects.js";
+import { initAnime1, beakerTranslatesY } from "./new.js";
+import { initAnime2, beakerMovesYX } from "./new1.js";
+import { initAnime3, moveDropperUp, moveSlides } from "./new2.js";
+import { initAnime4, expBactName } from "./new3.js";
 
 // Query Selectors============================================================
 const btnCollectWater = document.querySelector("#task1");
