@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <!-- bootstrap links -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>QUIZ</title>
+  </head>
+  <body >
+
+    <div class="container">
+
+        <div class="row"><br><br>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="loader">
+                    <div class="col-xs-3 col-xs-offset-5">
+                      <h2 class="question">Get Ready a Small Quiz!!!!</h2>
+                      <h3 style="background: grey;" class="question">Instruction:</h3>
+                      <ul>
+                        <li>You will be given a set of 3 Multiple Choice Questions</li>
+                        <li>For Each question you will get 15 Seconds</li>
+                        <li>All questions are of 10 marks each</li>
+                        <li>You will get you Result at the end of the quiz</li>
+                        <li>Click on the button below once you finish reading the instruction</li>
+
+                      </ul>
+                      <div class="">
+                        <form class="hint"  onsubmit="submitform(event)">
+                          <button id="show-hint-button" type="Submit" name="button">START QUIZ</button>
+                        </form>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="quiz.js" charset="utf-8"></script>
+  </body>
+</html>
