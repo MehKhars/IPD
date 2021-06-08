@@ -1,5 +1,5 @@
 // Import =========================================================
-import { requestFrame, canvasXY, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, microScopeXY, water2XY } from "./datafileObjects.js";
+import { requestFrame, canvasXY, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, slideHandXY, microScopeXY, water2XY } from "./datafileObjects.js";
 // ----------------------------------------------------------------
 
 // Main Logic Body=====================================================
@@ -89,11 +89,14 @@ function moveSlides() {
     moveSlideCountX++;
     slide1XY.x += slide1XY.dx * canvasXY.xRatio;
     slide2XY.x += slide2XY.dx * canvasXY.xRatio;
+    slideHandXY.x += slideHandXY.dx * canvasXY.xRatio;
   }
   if (moveSlideCountY <= 45) {
     moveSlideCountY++;
     slide1XY.y -= slide1XY.dy * canvasXY.yRatio;
     slide2XY.y -= slide2XY.dy * canvasXY.yRatio;
+    if(moveSlideCountY<=40) 
+    slideHandXY.y -= slideHandXY.dy * canvasXY.yRatio;
   }
   canvasXY.clearCanvas();
 
@@ -102,6 +105,7 @@ function moveSlides() {
   water2XY.renderWater(); //GetWater
   slide1XY.renderSlide1(); //Draw Slide1
   slide2XY.renderSlide2(); //Draw Slide2
+  slideHandXY.renderHand();
   microScopeXY.renderMicroscope(); //Draw Microscope  
   canvasXY.renderBg(); //Drawing background
 

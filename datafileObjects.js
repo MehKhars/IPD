@@ -23,6 +23,7 @@ let dropperHand = new Image()
 let drop = new Image();
 let slide1 = new Image();
 let slide2 = new Image();
+let slideHand = new Image();
 let microScope = new Image();
 let bg = new Image();
 bottle.src = "../assets/bottle.png";
@@ -31,6 +32,7 @@ dropper.src = "../assets/dropper.png";
 dropperHand.src = "../assets/dropperHand.png"
 slide1.src = "../assets/Slide.png";
 slide2.src = "../assets/Slide.png";
+slideHand.src = "../assets/slideHand.png";
 microScope.src = "../assets/Microscope.png";
 bg.src = 'assets/Bg.jpg';
 //----------------------------------------
@@ -211,6 +213,18 @@ let slide2XY = {
 }
 //New Co-ordinates: 328,223
 
+let slideHandXY = {
+  x: canvasXY.xRatio * (218), //218
+  y: canvasXY.yRatio * (273), //273
+  width: canvasXY.xRatio * 150,
+  height: canvasXY.yRatio * 52,
+  dx: 1,
+  dy: 1,
+  renderHand: () => {
+    ctx.drawImage(slideHand, slideHandXY.x, slideHandXY.y, slideHandXY.width, slideHandXY.height);
+  }
+}
+
 let microScopeXY = {
   x: canvasXY.xRatio * 290,
   y: canvasXY.yRatio * (100),
@@ -268,5 +282,5 @@ const bacteriaXY = {
 // ----------------------------------------------------------------------------
 
 // Export ===============================================================================
-export { requestFrame, canvasXY, beakerXY, waterXY, beakerXY1, bottleXY1, waterXY1, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, microScopeXY, water2XY, bacteriaXY };
+export { requestFrame, canvasXY, beakerXY, waterXY, beakerXY1, bottleXY1, waterXY1, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, slideHandXY, microScopeXY, water2XY, bacteriaXY };
 // -------------------------------------------------------------------------------------
