@@ -95,7 +95,8 @@ setTimeout(()=>{
 
 //ALL STEPS FOR PROCESS ========================================================
 
-controlAnimationFunc(0); ///init call func1
+// controlAnimationFunc(0); ///init call func1
+controlAnimationFunc(2); ///init call func1
 
 btnCollectWater.addEventListener("click", function () { //btn1 press
 

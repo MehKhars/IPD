@@ -19,6 +19,7 @@ bgImg.src = 'assets/Bg.jpg';
 //For new2.js============================================
 let bottle = new Image(); //Different bottle than the one in index1
 let dropper = new Image();
+let dropperHand = new Image()
 let drop = new Image();
 let slide1 = new Image();
 let slide2 = new Image();
@@ -27,6 +28,7 @@ let bg = new Image();
 bottle.src = "../assets/bottle.png";
 drop.src = "../assets/drop.png";
 dropper.src = "../assets/dropper.png";
+dropperHand.src = "../assets/dropperHand.png"
 slide1.src = "../assets/Slide.png";
 slide2.src = "../assets/Slide.png";
 microScope.src = "../assets/Microscope.png";
@@ -171,6 +173,18 @@ let dropperXY = {
   }
 }
 
+let dropperHandXY = {
+  x: canvasXY.xRatio * (78),
+  y: canvasXY.yRatio * (110),
+  width: canvasXY.xRatio * 100,
+  height: canvasXY.yRatio * 95,
+  dx: 1,
+  dy: 1,
+  renderHand: () => {
+    ctx.drawImage(dropperHand, dropperHandXY.x, dropperHandXY.y, dropperHandXY.width, dropperHandXY.height);
+  }
+}
+
 let slide1XY = {
   x: canvasXY.xRatio * (178), //178
   y: canvasXY.yRatio * (273), //273
@@ -254,5 +268,5 @@ const bacteriaXY = {
 // ----------------------------------------------------------------------------
 
 // Export ===============================================================================
-export { requestFrame, canvasXY, beakerXY, waterXY, beakerXY1, bottleXY1, waterXY1, bottleXY, dropperXY, slide1XY, slide2XY, microScopeXY, water2XY, bacteriaXY };
+export { requestFrame, canvasXY, beakerXY, waterXY, beakerXY1, bottleXY1, waterXY1, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, microScopeXY, water2XY, bacteriaXY };
 // -------------------------------------------------------------------------------------

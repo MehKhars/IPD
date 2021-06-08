@@ -1,5 +1,5 @@
 // Import =========================================================
-import { requestFrame, canvasXY, bottleXY, dropperXY, slide1XY, slide2XY, microScopeXY, water2XY } from "./datafileObjects.js";
+import { requestFrame, canvasXY, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, microScopeXY, water2XY } from "./datafileObjects.js";
 // ----------------------------------------------------------------
 
 // Main Logic Body=====================================================
@@ -11,31 +11,37 @@ function moveDropperUp() {
   if (moveDropperCount < 60) {
     //dropper move up
     dropperXY.y -= dropperXY.dy * canvasXY.yRatio;
+    dropperHandXY.y -= dropperHandXY.dy * canvasXY.yRatio;
     console.log("movingdropperUp...");
   }
 
   if (moveDropperCount >= 60 && moveDropperCount < 165) { // dropper move right
     dropperXY.x += dropperXY.dx * canvasXY.xRatio;
+    dropperHandXY.x += dropperHandXY.dx * canvasXY.xRatio;
     console.log("movingdropperRight...");
   }
 
   if (moveDropperCount >= 165 && moveDropperCount < 235) {
     dropperXY.y += canvasXY.yRatio * dropperXY.dy;
+    dropperHandXY.y += canvasXY.yRatio * dropperHandXY.dy;
     console.log("movedropperDown...");
   }
 
   if (moveDropperCount > 275 && moveDropperCount <= 322) {
     dropperXY.y -= 1.5 * canvasXY.yRatio * dropperXY.dy;
+    dropperHandXY.y -= 1.5 * canvasXY.yRatio * dropperHandXY.dy;
     //moveDropperUp
   }
 
   if (moveDropperCount > 310 && moveDropperCount < 364) {
     dropperXY.x -= 2 * dropperXY.dx * canvasXY.xRatio;
+    dropperHandXY.x -= 2 * dropperHandXY.dx * canvasXY.xRatio;
     //moveDropperLeft
   }
 
   if (moveDropperCount >= 360 && moveDropperCount <= 420) {
     dropperXY.y += dropperXY.dy * canvasXY.xRatio;
+    dropperHandXY.y += dropperHandXY.dy * canvasXY.xRatio;
     //MoveDropperDown back into water bottle
   }
 
@@ -60,6 +66,7 @@ function moveDropperUp() {
   }
 
   bottleXY.renderBottle(); //Drawing bottle
+  dropperHandXY.renderHand(); //Draw dropperHand
   dropperXY.renderDropper(); //Draw Dropper
   water2XY.renderWater(); //GetWater
   slide1XY.renderSlide1(); //Draw Slide1
@@ -111,6 +118,7 @@ function initAnime3() {
   bottleXY.renderBottle(); //Drawing bottle
   water2XY.renderWater(); //GetWater
   dropperXY.renderDropper(); //Draw Dropper
+  dropperHandXY.renderHand(); //Draw Hand
   slide1XY.renderSlide1(); //Draw Slide1
   slide2XY.renderSlide2(); //Draw Slide2
   microScopeXY.renderMicroscope(); //Draw Microscope  
