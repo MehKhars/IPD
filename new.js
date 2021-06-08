@@ -1,5 +1,5 @@
 // Import =====================================================
-import { canvasXY, beakerXY, waterXY, requestFrame } from "./datafileObjects.js";
+import { canvasXY, beakerXY, waterXY, beakerHandXY, requestFrame } from "./datafileObjects.js";
 // ------------------------------------------------------------
 
 // Main Logic Body and export==========================================
@@ -9,6 +9,8 @@ function beakerTranslatesY() {
 
   if (beakerTranslatesYCount < 100) {
     beakerXY.y += beakerXY.dy;
+    beakerHandXY.y += beakerHandXY.dy;
+    // beakerHandXY.renderHand();
     console.log("beakerTranslatesYDown...");
   }//Beaker translates down
 
@@ -19,11 +21,14 @@ function beakerTranslatesY() {
 
   if (beakerTranslatesYCount >= 145) {
     beakerXY.y -= (beakerXY.dy);
+    beakerHandXY.y -= (beakerHandXY.dy);
     waterXY.y = (beakerXY.y + 20 * canvasXY.yRatio);
     waterXY.renderWater();
+    // beakerHandXY.renderHand();
     console.log("beakerTranslatesYUp...");
   }//Beaker translates Up
 
+  beakerHandXY.renderHand();
   beakerXY.renderBeaker();
   canvasXY.renderLake();
 
@@ -41,6 +46,7 @@ function beakerTranslatesY() {
 let initAnime1Count = 0;
 function initAnime1() {
   canvasXY.clearCanvas();
+  beakerHandXY.renderHand();
   beakerXY.renderBeaker();
   canvasXY.renderLake();
   initAnime1Count++;

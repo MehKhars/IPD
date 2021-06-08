@@ -2,10 +2,12 @@ let ctx = document.getElementById('canvas').getContext('2d');
 ctx.globalCompositeOperation = 'destination-over';
 
 //For new.js==========================================
-var lakeImg = new Image();
-var beakerImg = new Image();
+let lakeImg = new Image();
+let beakerImg = new Image();
+let beakerHand = new Image();
 lakeImg.src = 'assets/lake.jpg';
 beakerImg.src = 'assets/big_beaker.png';
+beakerHand.src = 'assets/beakerHand.png';
 //----------------------------------------
 
 //For new1.js=============================================
@@ -39,7 +41,7 @@ bg.src = 'assets/Bg.jpg';
 
 //For new3.js==================================
 // Asset links are inside new3.js
-var circle = new Path2D();
+let circle = new Path2D();
 //----------------------------------------
 
 //Common canvas and requestFrame data ===========================
@@ -95,6 +97,20 @@ let waterXY = { //OG cordinates 180, 280
   renderWater: (x = waterXY.x, y = waterXY.y, w = waterXY.width, h = waterXY.height) => {
     ctx.fillStyle = 'rgba(72, 185, 189, 0.5)';
     ctx.fillRect(x, y, w, h);
+  }
+}
+
+let beakerHandXY = {
+  x: canvasXY.xRatio * 245,
+  y: canvasXY.yRatio * 90,
+  width: canvasXY.xRatio * 225,
+  height: canvasXY.yRatio * 93,
+  dx: canvasXY.xRatio * 0,
+  dy: canvasXY.yRatio * 1,
+  dw: 0,
+  dh: 1,
+  renderHand: () => {
+    ctx.drawImage(beakerHand, beakerHandXY.x, beakerHandXY.y, beakerHandXY.width, beakerHandXY.height);
   }
 }
 //----------------------------------------
@@ -282,5 +298,5 @@ const bacteriaXY = {
 // ----------------------------------------------------------------------------
 
 // Export ===============================================================================
-export { requestFrame, canvasXY, beakerXY, waterXY, beakerXY1, bottleXY1, waterXY1, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, slideHandXY, microScopeXY, water2XY, bacteriaXY };
+export { requestFrame, canvasXY, beakerXY, waterXY, beakerHandXY, beakerXY1, bottleXY1, waterXY1, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, slideHandXY, microScopeXY, water2XY, bacteriaXY };
 // -------------------------------------------------------------------------------------
