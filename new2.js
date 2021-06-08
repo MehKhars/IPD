@@ -120,7 +120,6 @@ function initAnime3() {
   canvasXY.clearCanvas(); //Clearing canvas
   bottleXY.renderBottle(); //Drawing bottle
   water2XY.renderWater(); //GetWater
-  dropperHandXY.renderHand(); //Draw dropper Hand
   dropperXY.renderDropper(); //Draw Dropper
   slide1XY.renderSlide1(); //Draw Slide1
   slide2XY.renderSlide2(); //Draw Slide2
