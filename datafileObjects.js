@@ -214,10 +214,10 @@ let slide2XY = {
 //New Co-ordinates: 328,223
 
 let slideHandXY = {
-  x: canvasXY.xRatio * (218), //218
-  y: canvasXY.yRatio * (273), //273
-  width: canvasXY.xRatio * 150,
-  height: canvasXY.yRatio * 52,
+  x: canvasXY.xRatio * (138), //218
+  y: canvasXY.yRatio * (213), //273
+  width: canvasXY.xRatio * 130,
+  height: canvasXY.yRatio * 72,
   dx: 1,
   dy: 1,
   renderHand: () => {

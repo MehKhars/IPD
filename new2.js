@@ -95,7 +95,6 @@ function moveSlides() {
     moveSlideCountY++;
     slide1XY.y -= slide1XY.dy * canvasXY.yRatio;
     slide2XY.y -= slide2XY.dy * canvasXY.yRatio;
-    if(moveSlideCountY<=40) 
     slideHandXY.y -= slideHandXY.dy * canvasXY.yRatio;
   }
   canvasXY.clearCanvas();
@@ -103,9 +102,9 @@ function moveSlides() {
   bottleXY.renderBottle(); //Drawing bottle
   dropperXY.renderDropper(); //Draw Dropper
   water2XY.renderWater(); //GetWater
+  if(moveSlideCountX<=100) slideHandXY.renderHand();
   slide1XY.renderSlide1(); //Draw Slide1
   slide2XY.renderSlide2(); //Draw Slide2
-  slideHandXY.renderHand();
   microScopeXY.renderMicroscope(); //Draw Microscope  
   canvasXY.renderBg(); //Drawing background
 
@@ -121,8 +120,8 @@ function initAnime3() {
   canvasXY.clearCanvas(); //Clearing canvas
   bottleXY.renderBottle(); //Drawing bottle
   water2XY.renderWater(); //GetWater
+  dropperHandXY.renderHand(); //Draw dropper Hand
   dropperXY.renderDropper(); //Draw Dropper
-  dropperHandXY.renderHand(); //Draw Hand
   slide1XY.renderSlide1(); //Draw Slide1
   slide2XY.renderSlide2(); //Draw Slide2
   microScopeXY.renderMicroscope(); //Draw Microscope  
