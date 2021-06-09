@@ -1,10 +1,10 @@
 // Import ==========================================================
-import { requestFrame, canvasXY, beakerXY1, bottleXY1, waterXY1 } from "./datafileObjects.js";
+import { requestFrame, canvasXY, beakerXY1, beakerHandXY1, bottleXY1, waterXY1 } from "./datafileObjects.js";
 // ------------------------------------------------------------------
 
 // Main Logic Body and export =======================================
 let beakerMovesYXCount = 0;
-let bottleWaterY = 294 * canvasXY.yRatio; 
+let bottleWaterY = 294 * canvasXY.yRatio;
 function beakerMovesYX() {
   beakerMovesYXCount++;
   canvasXY.clearCanvas();
@@ -13,11 +13,13 @@ function beakerMovesYX() {
   if (beakerMovesYXCount < 100) {
     waterXY1.y -= waterXY1.dy;
     beakerXY1.y -= beakerXY1.dy;
+    beakerHandXY1.y -= beakerHandXY1.dy;
   }
   //Initial Beaker X Translation
   if (beakerMovesYXCount >= 80 && beakerMovesYXCount < 180) {
     waterXY1.x -= waterXY1.dx;
     beakerXY1.x -= beakerXY1.dx;
+    beakerHandXY1.x -= beakerHandXY1.dx;
   }
 
   // WaterRendering before beaker rotate
@@ -26,7 +28,7 @@ function beakerMovesYX() {
   }
   if (beakerMovesYXCount >= 240) {
     //Beaker Dropping Water
-    if(beakerMovesYXCount <= 290){
+    if (beakerMovesYXCount <= 290) {
       waterXY1.renderWater1(175 * canvasXY.xRatio, 150 * canvasXY.yRatio, 14 * canvasXY.xRatio, 145 * canvasXY.yRatio);
     }
     //Bottle Water Increasing
@@ -37,15 +39,18 @@ function beakerMovesYX() {
   // Beaker Rotation
   if (beakerMovesYXCount >= 200) {
     if (beakerMovesYXCount <= 240) {
+      beakerHandXY1.rotateHand(beakerMovesYXCount - 200);
       beakerXY1.rotateBeaker(beakerMovesYXCount - 200);
     }
     // Beaker after full rotation cycle
     else {
+      beakerHandXY1.rotateHand(40);
       beakerXY1.rotateBeaker(40);
     }
   }
   // Beaker rendering before rotation
   else {
+    beakerHandXY1.renderHand();
     beakerXY1.renderBeaker1();
   }
 
@@ -63,7 +68,8 @@ let initAnime2Count = 0;
 function initAnime2() {
   initAnime2Count++;
   canvasXY.clearCanvas();
-  waterXY1.renderWater1();  
+  // beakerHandXY1.renderHand();
+  waterXY1.renderWater1();
   beakerXY1.renderBeaker1();
   bottleXY1.renderBottle1();
   canvasXY.renderBg();

@@ -13,9 +13,11 @@ beakerHand.src = 'assets/beakerHand.png';
 //For new1.js=============================================
 let bottleImg = new Image();
 let bgImg = new Image();
+let beakerHand1 = new Image();
 //beakerImg used here also
 bottleImg.src = 'assets/bottle_vlab.svg';
 bgImg.src = 'assets/Bg.jpg';
+beakerHand1.src = 'assets/beakerHand1.png';
 //----------------------------------------
 
 //For new2.js============================================
@@ -125,16 +127,40 @@ const beakerXY1 = {
   dx: canvasXY.xRatio * 1,
   dy: canvasXY.yRatio * 1,
   rotateValX: canvasXY.xRatio * 220,
-  rotateValY: canvasXY.yRatio * 150,  
+  rotateValY: canvasXY.yRatio * 150,
   renderBeaker1: () => {
     ctx.drawImage(beakerImg, beakerXY1.x, beakerXY1.y, beakerXY1.width, beakerXY1.height);
   },
-  rotateBeaker: (arg)=>{
-    ctx.save();    
-    ctx.translate(beakerXY1.rotateValX, beakerXY1.rotateValY);    
-    ctx.rotate(-( (arg) * Math.PI / (2*40)));
+  rotateBeaker: (arg) => {
+    ctx.save();
+    ctx.translate(beakerXY1.rotateValX, beakerXY1.rotateValY);
+    ctx.rotate(-((arg) * Math.PI / (2 * 40)));
     ctx.translate(-beakerXY1.rotateValX, -beakerXY1.rotateValY);
     beakerXY1.renderBeaker1();
+    ctx.save();
+    ctx.restore();
+    ctx.restore();
+  }
+}
+
+let beakerHandXY1 = {
+  x: canvasXY.xRatio * 360,
+  y: canvasXY.yRatio * 190,
+  width: canvasXY.xRatio * 100,
+  height: canvasXY.yRatio * 285,
+  dx: canvasXY.xRatio * 1,
+  dy: canvasXY.yRatio * 1,
+  rotateValX: canvasXY.xRatio * 220,
+  rotateValY: canvasXY.yRatio * 150,
+  renderHand: () => {
+    ctx.drawImage(beakerHand1, beakerHandXY1.x, beakerHandXY1.y, beakerHandXY1.width, beakerHandXY1.height);
+  },
+  rotateHand: (arg) => {
+    ctx.save();
+    ctx.translate(beakerHandXY1.rotateValX, beakerHandXY1.rotateValY);
+    ctx.rotate(-((arg) * Math.PI / (2 * 40)));
+    ctx.translate(-beakerHandXY1.rotateValX, -beakerHandXY1.rotateValY);
+    beakerHandXY1.renderHand();
     ctx.save();
     ctx.restore();
     ctx.restore();
@@ -159,7 +185,7 @@ let waterXY1 = {
   dx: canvasXY.xRatio * 1,
   dy: canvasXY.yRatio * 1,
   color: 'rgba(72, 185, 189, 0.3)',
-  renderWater1: (x = waterXY1.x, y = waterXY1.y, w = waterXY1.width, h = waterXY1.height, color=waterXY1.color) => {
+  renderWater1: (x = waterXY1.x, y = waterXY1.y, w = waterXY1.width, h = waterXY1.height, color = waterXY1.color) => {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, w, h);
   }
@@ -279,7 +305,7 @@ const bacteriaXY = {
   height: 88 * canvasXY.yRatio,
   unity: 1,
   arcColor: 'rgba(225, 246, 247, 1)',
-  bacteria1:'',
+  bacteria1: '',
   renderArc: () => {
     circle.arc(canvasXY.width / 2, canvasXY.height / 2, bacteriaXY.radius, 0, Math.PI * 2);
     ctx.fillStyle = bacteriaXY.arcColor;
@@ -298,5 +324,5 @@ const bacteriaXY = {
 // ----------------------------------------------------------------------------
 
 // Export ===============================================================================
-export { requestFrame, canvasXY, beakerXY, waterXY, beakerHandXY, beakerXY1, bottleXY1, waterXY1, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, slideHandXY, microScopeXY, water2XY, bacteriaXY };
+export { requestFrame, canvasXY, beakerXY, waterXY, beakerHandXY, beakerXY1, beakerHandXY1, bottleXY1, waterXY1, bottleXY, dropperXY, dropperHandXY, slide1XY, slide2XY, slideHandXY, microScopeXY, water2XY, bacteriaXY };
 // -------------------------------------------------------------------------------------

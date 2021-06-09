@@ -33,7 +33,7 @@ const controlAnimeBtnFunc = () => {
   }
 }
 
-const disableBtnIndex = (index, bool) => {  
+const disableBtnIndex = (index, bool) => {
   controlAnimeBtnArray[index] = bool;
 }
 
@@ -63,34 +63,34 @@ const controlAnimationFunc = num => {
       break;
 
     // default:
-      // console.log("There is Some Error, Hailing From Switch Case!"); break;
+    // console.log("There is Some Error, Hailing From Switch Case!"); break;
   }
 }
 
 
 // Message Control=============================================================
 
-const dispMessage = (message) => {  
-  dispText.innerHTML = message;  
+const dispMessage = (message) => {
+  dispText.innerHTML = message;
 }
 
 //Initial Messages Before First Animation
 dispMessage("Welcome to <strong>Virtual Labs!</strong>");
-setTimeout(()=>{
+setTimeout(() => {
   dispMessage("Let's Begin The <strong>Experiment...</strong>");
-},3000);
+}, 3000);
 
 
-setTimeout(()=>{
-  dispMessage("Follow The <strong>Buttons</strong> For Experiment");  
-},6000);
+setTimeout(() => {
+  dispMessage("Follow The <strong>Buttons</strong> For Experiment");
+}, 6000);
 
 
-setTimeout(()=>{
+setTimeout(() => {
   dispMessage("Let's Collect <strong>Pond Water</strong> For Observation!");
   disableBtnIndex(0, true);
   controlAnimeBtnFunc();
-},9000);
+}, 9000);
 // -----------------------------------------------------------------------
 
 //ALL STEPS FOR PROCESS ========================================================
@@ -110,36 +110,36 @@ btnCollectWater.addEventListener("click", function () { //btn1 press
     controlAnimationFunc(1); //Call that animation in switch case
     dispMessage("It Seems That Water is Turbid...");
 
-    setTimeout(()=>{
+    setTimeout(() => {
       disableBtnIndex(1, true); //Enable next button with the rendering of next static animation
       controlAnimeBtnFunc(); //Activate the next button and add border
       dispMessage("Let's Filter Water Through A <strong>Muslin Cloth</strong>");//Instructioon for next animation
-    },3500);
+    }, 3500);
 
   }, 6500); //time set for 6.5s(Calculated)
 });
 
-{/* <strong></strong> */}
+{/* <strong></strong> */ }
 btnFilter.addEventListener("click", () => { //btn2 press Animation 2
   requestFrame(beakerMovesYX);
   dispMessage("<strong>Filtering</strong> Water...");
   btnFilter.disabled = true;
-  disableBtnIndex(1, false);  
+  disableBtnIndex(1, false);
   controlAnimeBtnFunc();
   setTimeout(() => {
     controlAnimationFunc(2);
     dispMessage("Water is now <strong>Filtered Out</strong>. Let's Check it under <strong>Microscope!</strong>");
-    setTimeout(()=>{
+    setTimeout(() => {
       disableBtnIndex(2, true);
-      controlAnimeBtnFunc();  
+      controlAnimeBtnFunc();
       dispMessage("First Take A Drop Of Water onto the Cover Glass!");
-    },4000)
+    }, 4000)
   }, 8500);
 });
 
 
 dropWater.addEventListener("click", () => { //Animation 3 part 1
-  
+
   requestFrame(moveDropperUp);
   dispMessage("Make Sure There are <strong>No Bubbles</strong> while covering it with Cover Glass!");
   dropWater.disabled = true;
@@ -148,11 +148,11 @@ dropWater.addEventListener("click", () => { //Animation 3 part 1
 
   setTimeout(() => {
     dispMessage("Let's Place Cover Glass Under <strong>Compound Microscope</strong> to view!");
-    setTimeout(()=>{
+    setTimeout(() => {
       disableBtnIndex(3, true);
       controlAnimeBtnFunc();
       // controlAnimationFunc(2);
-    },3000);
+    }, 3000);
   }, 7500);
 });
 
@@ -164,17 +164,17 @@ takeToMicroScope.addEventListener("click", () => { //Animation 3 part 2
     // disableBtnIndex(3, true);
     controlAnimationFunc(3);
     controlAnimeBtnFunc();
-    dispMessage("Bacteria Found: "+expBactName+"<br>Though Water Appears To be <strong>Clean To Naked Eyes</strong>");
-    
-    setTimeout(()=>{
-      dispMessage("Bacteria Found: "+expBactName+"<br><strong>Different Kinds Of Micro-Organisms</strong> are present In Water!");
-    },4000);
-    setTimeout(()=>{
-      dispMessage("Bacteria Found: "+expBactName+"<br>As We Can See Here, <strong>"+expBactName+"</strong> is present in our filtered Water!");
-    },10000);
-    setTimeout(()=>{
+    dispMessage("Bacteria Found: " + expBactName + "<br>Though Water Appears To be <strong>Clean To Naked Eyes</strong>");
+
+    setTimeout(() => {
+      dispMessage("Bacteria Found: " + expBactName + "<br><strong>Different Kinds Of Micro-Organisms</strong> are present In Water!");
+    }, 4000);
+    setTimeout(() => {
+      dispMessage("Bacteria Found: " + expBactName + "<br>As We Can See Here, <strong>" + expBactName + "</strong> is present in our filtered Water!");
+    }, 10000);
+    setTimeout(() => {
       dispMessage("<strong>Thank You!</strong> For Viewing..<br><strong>We Hope You Have Understood The Experiment!</strong>");
-    },16000);
+    }, 16000);
     // setTimeout(()=>{
     //   dispMessage("<strong>We Hope You Have Understood The Experiment!</strong>");
     // },18000);
