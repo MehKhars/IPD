@@ -50,7 +50,7 @@ function initAnime4() {
 
     //Changing Height
     cheight[0] = getRandomArbitrary(2, 6);
-    if (bacteriaXY.height - cheight[0] < 60 * canvasXY.yRatio || bacteriaXY.height + cheight[0] > 148 * canvasXY.yRatio) {
+    if (bacteriaXY.height - cheight[0] < 85 * canvasXY.yRatio || bacteriaXY.height + cheight[0] > 118 * canvasXY.yRatio) {
       cheight[1] = !(cheight[1]);
     }
     else {
@@ -64,7 +64,7 @@ function initAnime4() {
 
     //Changing Width
     cwidth[0] = getRandomArbitrary(2, 6);
-    if (bacteriaXY.width - cheight[0] < 80 * canvasXY.xRatio || bacteriaXY.width + cwidth[0] > 140 * canvasXY.xRatio) {
+    if (bacteriaXY.width - cheight[0] < 100 * canvasXY.xRatio || bacteriaXY.width + cwidth[0] > 110 * canvasXY.xRatio) {
       cwidth[1] = !(cwidth[1]);
     }
     else {
