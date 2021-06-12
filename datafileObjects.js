@@ -44,6 +44,8 @@ bg.src = 'assets/Bg.jpg';
 //For new3.js==================================
 // Asset links are inside new3.js
 let circle = new Path2D();
+let microDrops = new Image();
+microDrops.src = "../assets/microDrops1.png";
 //----------------------------------------
 
 //Common canvas and requestFrame data ===========================
@@ -313,6 +315,9 @@ const bacteriaXY = {
   },
   renderBacteria: () => {
     ctx.drawImage(bacteriaXY.bacteria1, bacteriaXY.x - 30 * canvasXY.xRatio, bacteriaXY.y - 30 * canvasXY.yRatio, bacteriaXY.width, bacteriaXY.height);
+  },
+  renderMicroDrops: (img = microDrops, x = 100, y = 100, width = 20, height = 20)=>{
+    ctx.drawImage(img, x * canvasXY.xRatio, y * canvasXY.yRatio, width * canvasXY.xRatio, height * canvasXY.yRatio)
   },
   renderBlackCanvas: () => {
     ctx.beginPath();

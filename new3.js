@@ -8,7 +8,7 @@ function getRandomInt(arg) {
 // -----------------------------------------------------------------------
 
 // Bacteria Selector and import -------------------------------------------
-const bactArr = ['bacteria.png', 'bacteria1Color.jpg', 'bacteria2.png', 'bacteria3.jpg'];
+const bactArr = ['bacteria.png', 'bacteria1Color.png', 'bacteria2.png', 'bacteria3.png'];
 const actBactName = ['Amoeba', 'Paramecium', 'Chlamydomonas', 'Spirogyra'];
 let num = getRandomInt(bactArr.length);
 let bactName = bactArr[num];
@@ -20,6 +20,23 @@ import { requestFrame, canvasXY, bacteriaXY } from "../datafileObjects.js";
 bacteriaXY.bacteria1 = bacteria1;
 // ----------------------------------------------------------------------
 
+// Drops Selector -----------------------------------------------------------
+const dropLoc = [];
+for(let i=0; i<25; i++){
+  dropLoc.push([getRandomArbitrary(120, 340), getRandomArbitrary(80, 260)])
+}
+// const dropLoc = [[100,150], [120, 80], [220, 30], [340, 80], [370, 150], [340, 260], [220, 310]];
+const dropOptions = ['microDrops.png', 'microDrops1.png', 'microDrops2.png'];
+const dropArr = [];
+dropLoc.forEach((loc, index)=>{
+  let dropImg = new Image();  
+  let num = getRandomInt(dropOptions.length);
+  dropImg.src = "../assets/" + dropOptions[num];
+  dropArr[index] = [dropImg, loc[0], loc[1]];
+  console.log(dropArr);
+})
+
+// --------------------------------------------------------------------------
 
 // Main Logic body---------------------------------------------------------
 let initAnime4Count = 0, moveBact = true;
@@ -31,7 +48,7 @@ if (bactName != 'bacteria.png') {
   bacteriaXY.arcColor = "white";
 }
 
-if (bactName == 'bacteria3.jpg') {
+if (bactName == 'bacteria3.png') {
   moveBact = false;
   bacteriaXY.x = 138 * canvasXY.xRatio;
   bacteriaXY.y = 105 * canvasXY.yRatio;
@@ -106,7 +123,11 @@ function initAnime4() {
   }
 
   if (moveBact) moveBactLoc();
-  bacteriaXY.renderBacteria();
+  bacteriaXY.renderBacteria();  
+  // bacteriaXY.renderMicroDrops();
+  dropArr.forEach((drop)=>{
+    bacteriaXY.renderMicroDrops(drop[0], drop[1], drop[2])
+  })
   bacteriaXY.renderArc();
   bacteriaXY.renderBlackCanvas();
   // console.log("initAnime4...");
