@@ -8,6 +8,7 @@
   <title>VirtualLab</title>
 </head>
 <body>  
+  
   <!-- TestingHTMLCode: NOTE::w/h = 472/368 = 1.2826 ie if w = 900 then h = 701.6949152542373-->
   <!-- <canvas id="canvas" width="472px" height="368px"></canvas>
   <canvas id="canvas" width="700px" height="545 .76271186440677966101694915254px"></canvas>
@@ -22,9 +23,18 @@
       /* position: relative; */
       /* top: -15.4em; */
     }
+    h1 {
+      text-align: center;
+      color: whitesmoke;
+      /* margin-right: 120px; */
+    }
+    body {
+      background-color: #231e23;
+    }
   </style>
 
   <div class="container mt-5">
+    <h1 style="padding-bottom: 30px; margin-right: 134px;"><b>Observation Of Microorgansims</b></h1>
     <div class="row">
       <div class="col-lg-2"></div>
       <div class="col-lg-8 text-center d-flex">
@@ -36,18 +46,21 @@
             <span class="text-wrapper">
               <span class="message"></span>
             </span>
-          </h5>                    
+          </h5> 
+<!--           
+          <h4><a href="./WhiteBook (1).pdf" target="_blank">Overview of Experiment</a></h4> -->
         </div>
         <div class="context ms-3">
           <div class="head">
-            <h1 class="display-4">Steps</h1>
-            <p class="fs-5">For Experiment</p>            
+            <h1 class="display-4" style="color: antiquewhite;">Steps</h1>
+            <p class="fs-5" style="color: antiquewhite;">For Experiment</p>            
           </div>
-          <div class="btn-group btn-group-vertical btn-group-lg" role="group" aria-label="Basic outlined example">
+          <div class="btn-group btn-group-vertical btn-group-md" role="group" aria-label="Basic outlined example">
             <button id="task1" class="w-100 btn btn-info" type="button">Collect Water</button>
             <button id="task2" class="w-100 btn btn-warning" type="button">Filter</button>
             <button id="task3a" class="w-100 btn btn-danger" type="button">Take a Drop of water on slide</button>
             <button id="task3b" class="w-100 btn btn-success" type="button">Take the slide under microscope</button>
+            <button type="button" class="btn btn-light"><a href="./vlab_more_info.pdf" target="_blank">More Info</a></button>
           </div>
         </div>
       </div>      
