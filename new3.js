@@ -33,7 +33,7 @@ dropLoc.forEach((loc, index)=>{
   let num = getRandomInt(dropOptions.length);
   dropImg.src = "../assets/" + dropOptions[num];
   dropArr[index] = [dropImg, loc[0], loc[1]];
-  console.log(dropArr);
+  // console.log(dropArr);
 })
 
 // --------------------------------------------------------------------------

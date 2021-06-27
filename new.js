@@ -11,12 +11,12 @@ function beakerTranslatesY() {
     beakerXY.y += beakerXY.dy;
     beakerHandXY.y += beakerHandXY.dy;
     // beakerHandXY.renderHand();
-    console.log("beakerTranslatesYDown...");
+    // console.log("beakerTranslatesYDown...");
   }//Beaker translates down
 
   if (beakerTranslatesYCount >= 100 && beakerTranslatesYCount < 145) {
     waterXY.renderWater(waterXY.x, waterXY.y + waterXY.height - canvasXY.yRatio * (beakerTranslatesYCount - 100), waterXY.width, canvasXY.yRatio * (beakerTranslatesYCount - 100));
-    console.log("FillingWater...");
+    // console.log("FillingWater...");
   }//Water adds in Beaker
 
   if (beakerTranslatesYCount >= 145) {
@@ -25,7 +25,7 @@ function beakerTranslatesY() {
     waterXY.y = (beakerXY.y + 20 * canvasXY.yRatio);
     waterXY.renderWater();
     // beakerHandXY.renderHand();
-    console.log("beakerTranslatesYUp...");
+    // console.log("beakerTranslatesYUp...");
   }//Beaker translates Up
 
   beakerHandXY.renderHand();
@@ -50,7 +50,7 @@ function initAnime1() {
   beakerXY.renderBeaker();
   canvasXY.renderLake();
   initAnime1Count++;
-  console.log("initAnime1...");
+  // console.log("initAnime1...");
   if (initAnime1Count < 35) {
     requestFrame(initAnime1);
   }

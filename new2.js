@@ -12,19 +12,19 @@ function moveDropperUp() {
     //dropper move up
     dropperXY.y -= dropperXY.dy * canvasXY.yRatio;
     dropperHandXY.y -= dropperHandXY.dy * canvasXY.yRatio;
-    console.log("movingdropperUp...");
+    // console.log("movingdropperUp...");
   }
 
   if (moveDropperCount >= 60 && moveDropperCount < 165) { // dropper move right
     dropperXY.x += dropperXY.dx * canvasXY.xRatio;
     dropperHandXY.x += dropperHandXY.dx * canvasXY.xRatio;
-    console.log("movingdropperRight...");
+    // console.log("movingdropperRight...");
   }
 
   if (moveDropperCount >= 165 && moveDropperCount < 235) {
     dropperXY.y += canvasXY.yRatio * dropperXY.dy;
     dropperHandXY.y += canvasXY.yRatio * dropperHandXY.dy;
-    console.log("movedropperDown...");
+    // console.log("movedropperDown...");
   }
 
   if (moveDropperCount > 275 && moveDropperCount <= 322) {
@@ -48,7 +48,7 @@ function moveDropperUp() {
   if (moveDropperCount > 265 && moveDropperCount <= 300) { //drop movement down
     water2XY.dropY += 1 * canvasXY.yRatio;
     water2XY.renderDrop();
-    console.log("dropMovesDown...");
+    // console.log("dropMovesDown...");
   }
 
   if (moveDropperCount == 300) {
@@ -57,12 +57,12 @@ function moveDropperUp() {
 
   if (moveDropperCount >= 325 && moveDropperCount <= 327) {
     slide1XY.y -= slide1XY.dy * canvasXY.yRatio;
-    console.log("slideMovesUp...");
+    // console.log("slideMovesUp...");
   }
 
   if (moveDropperCount >= 337 && moveDropperCount >= 380) {
     slide1XY.x += slide1XY.dx * canvasXY.xRatio;
-    console.log("slideMovesRight...");
+    // console.log("slideMovesRight...");
   }
 
   bottleXY.renderBottle(); //Drawing bottle
@@ -109,7 +109,7 @@ function moveSlides() {
   canvasXY.renderBg(); //Drawing background
 
   moveSlideCount++;
-  console.log("movingSlides...");
+  // console.log("movingSlides...");
   if (moveSlideCount <= 115) {
     requestFrame(moveSlides);
   }
@@ -126,7 +126,7 @@ function initAnime3() {
   microScopeXY.renderMicroscope(); //Draw Microscope  
   canvasXY.renderBg(); //Drawing background
   initAnime3Count++;
-  console.log("initAnime3...");
+  // console.log("initAnime3...");
   if (initAnime3Count < 15) {
     requestFrame(initAnime3)
   }

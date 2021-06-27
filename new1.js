@@ -58,7 +58,7 @@ function beakerMovesYX() {
   bottleXY1.renderBottle1();
   canvasXY.renderBg();
 
-  console.log("beakerMovesYX...");
+  // console.log("beakerMovesYX...");
   if (beakerMovesYXCount < 295) {
     requestFrame(beakerMovesYX);
   }
@@ -73,7 +73,7 @@ function initAnime2() {
   beakerXY1.renderBeaker1();
   bottleXY1.renderBottle1();
   canvasXY.renderBg();
-  console.log("initAnime2...");
+  // console.log("initAnime2...");
   if (initAnime2Count < 15) {
     requestFrame(initAnime2);
   }
