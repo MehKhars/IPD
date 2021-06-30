@@ -14,7 +14,7 @@ const dispText = document.querySelector(".message ");
 //Btn transitions for enabling and disabling with border====================================
 let btn = [btnCollectWater, btnFilter, dropWater, takeToMicroScope];
 const controlAnimeBtnArray = [false, false, false, false];
-const addClass = ['border-5', 'border-dark'];
+const addClass = ['border-5', 'border-light'];
 
 const controlAnimeBtnFunc = () => {
   for (let i = 0; i < btn.length; i++) {
