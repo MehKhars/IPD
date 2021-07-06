@@ -171,7 +171,10 @@ takeToMicroScope.addEventListener("click", () => { //Animation 3 part 2
     }, 4000);
     setTimeout(() => {
       dispMessage("Bacteria Found: " + expBactName + "<br>As We Can See Here, <strong>" + expBactName + "</strong> is present in our filtered Water!");
-    }, 10000);    
+    }, 8000);    
+    setTimeout(()=>{
+      dispMessage("Though water appears clean to the naked eye, different kinds of minute organisms can be observed under the microscope.");
+    }, 13000)
   }, 5000);
 });
 
